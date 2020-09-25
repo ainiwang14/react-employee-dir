@@ -1,15 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Employee from '../Employee/Employee';
 
 const EmployeeContainer = () => {
     
-    const employees = [];
-    for(let i = 0; i < 10; i++){
-        employees.push(<Employee id={i} key={i}/>)
-    }
+    const [employees, updateEmployee] = useState([]);
+    
     const addEmployee = (event) => {
         event.preventDefault();
-        employees.push( <Employee id={employees.length} key={employees.length}/> );
+        updateEmployee([...employees, (<Employee id={employees.length} key={employees.length}/>)]);
     }
 
     return (
