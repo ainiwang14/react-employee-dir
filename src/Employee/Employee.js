@@ -1,16 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Employee.css'
 const Employee = (props) => {
     const { id } = props;
+    const [showEmployee, toggleEmployee] = useState(true);
+    const hideEmployee = (event) => {
+        event.preventDefault();
+        toggleEmployee(false);
+    }
     return (
-        <div key={id} className='card'>
-            <div>{id}</div>
-            <div>Name: </div>
-            <div>Department: </div>
-            <div>Role: </div>
-            <div>Email: </div>
-            <button className='remove' >Remove</button>
-        </div>
+        showEmployee && 
+            (<div className='card'>
+                <div>Employee Number: {id}</div>
+                <div>Name: Aileen Wang</div>
+                <div>Department: Legal</div>
+                <div>Role: Cat Sitter</div>
+                <div>Email: email@email.com</div>
+                <button className='remove' onClick={hideEmployee}>Remove</button>
+            </div>)
     )
 }
 

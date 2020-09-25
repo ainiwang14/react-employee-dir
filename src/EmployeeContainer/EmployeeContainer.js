@@ -7,6 +7,10 @@ const EmployeeContainer = () => {
     
     const addEmployee = (event) => {
         event.preventDefault();
+        // TODO
+        // When you Add an employee, display a form
+        // the details of that form can be passed 
+        // down as props for dynamic employees
         updateEmployee([...employees, (<Employee id={employees.length} key={employees.length}/>)]);
     }
 
