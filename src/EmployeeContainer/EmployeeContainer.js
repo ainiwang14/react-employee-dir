@@ -15,7 +15,6 @@ const EmployeeContainer = () => {
         {employees}
         <div className='update'>
                 <button className='add' onClick={addEmployee}>Add</button>
-                <button className='remove' >Remove</button>
             </div>
         </>
     )
